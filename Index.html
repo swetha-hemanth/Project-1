@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raja Lodge Ooty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Background Video -->
+  <div class="relative h-screen w-full overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+      <source src="your-video.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Navbar -->
+    <header class="absolute top-0 w-full z-20">
+      <nav class="flex justify-between items-center px-6 py-4 bg-transparent backdrop-blur-sm">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="logo.png" alt="Raja Lodge Logo" class="w-14 h-14 rounded-full bg-white p-1 shadow-lg">
+          <span class="text-xl font-bold tracking-wide">Raja Lodge Ooty</span>
+        </div>
+        <!-- Nav Links -->
+        <ul class="hidden md:flex space-x-8 text-lg font-medium">
+          <li><a href="#home" class="hover:text-yellow-400">🏠 Home</a></li>
+          <li><a href="#about" class="hover:text-yellow-400">ℹ️ About</a></li>
+          <li><a href="#gallery" class="hover:text-yellow-400">🖼️ Gallery</a></li>
+          <li><a href="#pricing" class="hover:text-yellow-400">💰 Pricing</a></li>
+          <li><a href="#reviews" class="hover:text-yellow-400">⭐ Reviews</a></li>
+          <li><a href="#guideline" class="hover:text-yellow-400">📜 Guideline</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400">📞 Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Content -->
+    <div id="home" class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
+        ✨ Experience Heritage in Queen of Hills ✨
+      </h1>
+      <p class="mt-4 text-lg md:text-2xl italic tracking-wide">
+        🌿 Where Warmth Meets Heritage 🌿
+      </p>
+
+      <!-- Buttons -->
+      <div class="mt-8 flex space-x-6">
+        <a href="tel:9843830181" class="px-6 py-3 rounded-full bg-yellow-500 text-black font-bold shadow-lg hover:bg-yellow-400 transition">
+          📞 Call Now
+        </a>
+        <a href="https://wa.me/919843830181" target="_blank" class="px-6 py-3 rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-400 transition">
+          💬 WhatsApp Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dummy Sections for Smooth Scroll -->
+  <section id="about" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">About Section</section>
+  <section id="gallery" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Gallery Section</section>
+  <section id="pricing" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">Pricing Section</section>
+  <section id="reviews" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Reviews Section</section>
+  <section id="guideline" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">Guideline Section</section>
+  <section id="contact" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Contact Section</section>
+
+</body>
+  </html>
