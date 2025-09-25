@@ -12,6 +12,9 @@
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
     html { scroll-behavior: smooth; }
   </style>
+  <!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body class="bg-black text-white">
 
@@ -94,12 +97,272 @@
     <!-- Image with Neon Glow -->
     <div class="flex justify-center">
       <div class="relative rounded-xl overflow-hidden shadow-lg border-4 border-white animate-pulse">
-        <img src="ooty-spot.jpg" alt="Ooty Tourist Spot" class="w-full h-80 object-cover rounded-xl">
+        <img src="image.png" alt="Ooty Tourist Spot" class="w-full h-80 object-cover rounded-xl">
         <div class="absolute inset-0 rounded-xl border-4 border-white blur-md"></div>
       </div>
     </div>
   </div>
 </section>
+  <!-- SwiperJS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<!-- Gallery Section -->
+<section id="gallery" class="bg-gray-900 text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-10 text-yellow-400 font-[Playfair Display]">
+      🖼️ Our Gallery
+    </h2>
+
+    <!-- Slider (Top) -->
+    <div class="swiper mySwiper mb-12 rounded-xl overflow-hidden shadow-lg">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://i.ibb.co/hxNfX7Gf" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/YTNby8f0" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/4wFWc5QM" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/KxmYB4Mx" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/ZpNhLDMd" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/m59pbJsz" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/7tpxM2Hv" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/6JZwg13S" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/5hcg3VXq" class="w-full h-96 object-cover rounded-lg"></div>
+        <div class="swiper-slide"><img src="https://i.ibb.co/LdnXw6xN" class="w-full h-96 object-cover rounded-lg"></div>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Grid (Bottom) -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <img src="https://i.ibb.co/hxNfX7Gf" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/YTNby8f0" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/4wFWc5QM" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/KxmYB4Mx" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/ZpNhLDMd" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/m59pbJsz" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/7tpxM2Hv" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/6JZwg13S" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/5hcg3VXq" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+      <img src="https://i.ibb.co/LdnXw6xN" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition">
+    </div>
+  </div>
+</section>
+
+<!-- SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+                                    </script>
+  <!-- Premium Pricing Section -->
+<section id="pricing" class="bg-gray-900 text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12 text-yellow-400 font-[Playfair Display]">
+      💎 Luxury Room Rates
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+
+      <!-- Weekdays Rates Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-yellow-400 transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Weekdays Rates (Mon - Thurs)</h3>
+        <ul class="text-gray-200 space-y-2 text-lg">
+          <li>Single Person: <span class="text-yellow-400 font-semibold">₹600</span></li>
+          <li>Standard Room (2 persons): <span class="text-yellow-400 font-semibold">₹700</span></li>
+          <li>Deluxe Room (2 persons): <span class="text-yellow-400 font-semibold">₹900</span></li>
+          <li>Triple Bedroom (4 persons): <span class="text-yellow-400 font-semibold">₹1000</span></li>
+        </ul>
+      </div>
+
+      <!-- Weekend Rates Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-yellow-400 transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Weekend Rates (Fri - Sat)</h3>
+        <ul class="text-gray-200 space-y-2 text-lg">
+          <li>Single Person: <span class="text-yellow-400 font-semibold">₹700</span></li>
+          <li>Standard Room (2 persons): <span class="text-yellow-400 font-semibold">₹900</span></li>
+          <li>Deluxe Room (2 persons): <span class="text-yellow-400 font-semibold">₹1200</span></li>
+          <li>Triple Bedroom (4 persons): <span class="text-yellow-400 font-semibold">₹1400</span></li>
+        </ul>
+      </div>
+
+      <!-- Seasonal Pricing Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-yellow-400 transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Seasonal Pricing (Apr 1 - Jun 10, Mon - Thurs)</h3>
+        <ul class="text-gray-200 space-y-2 text-lg">
+          <li>Standard Room (1 person): <span class="text-yellow-400 font-semibold">₹1000</span></li>
+          <li>Standard Room (2 persons): <span class="text-yellow-400 font-semibold">₹1200</span></li>
+          <li>Deluxe Room (2 persons): <span class="text-yellow-400 font-semibold">₹1500</span></li>
+          <li>Triple Bedroom (4 persons): <span class="text-yellow-400 font-semibold">₹1800</span></li>
+        </ul>
+      </div>
+
+      <!-- Peak / Holiday Rates Card -->
+      <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-yellow-400 transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Peak Weekends long government holidays / Holidays (Fri - Monday)</h3>
+        <ul class="text-gray-200 space-y-2 text-lg">
+          <li>Standard Room (1 person): <span class="text-yellow-400 font-semibold">₹1500</span></li>
+          <li>Deluxe Room (2 persons): <span class="text-yellow-400 font-semibold">₹2500</span></li>
+          <li>Triple Bedroom (4 persons): <span class="text-yellow-400 font-semibold">₹3200</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <section id="reviews" class="bg-gray-900 text-white py-16 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-8 text-yellow-400 font-[Playfair Display]">
+      ⭐ Customer Reviews
+    </h2>
+
+    <!-- Review Form -->
+    <div class="bg-gray-800 p-6 rounded-xl mb-12 shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">Leave Your Review</h3>
+
+      <!-- Star Rating -->
+      <div class="flex justify-center mb-4 space-x-2">
+        <span class="star text-3xl cursor-pointer" data-value="1">☆</span>
+        <span class="star text-3xl cursor-pointer" data-value="2">☆</span>
+        <span class="star text-3xl cursor-pointer" data-value="3">☆</span>
+        <span class="star text-3xl cursor-pointer" data-value="4">☆</span>
+        <span class="star text-3xl cursor-pointer" data-value="5">☆</span>
+      </div>
+
+      <textarea id="reviewText" class="w-full p-3 rounded-lg text-black" rows="4" placeholder="Write your suggestions here..."></textarea>
+      <button id="submitReview" class="mt-4 px-6 py-3 bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-400 transition">
+        Submit Review
+      </button>
+    </div>
+
+    <!-- Display Reviews -->
+    <div id="reviewsList" class="space-y-6">
+      <!-- Reviews will be appended here dynamically -->
+    </div>
+  </div>
+  </section>
+  <!-- Contact Section -->
+<section id="contact" class="relative bg-gradient-to-b from-black via-gray-900 to-blue-950 text-white py-16 px-6 glow-container">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12 text-blue-400 font-[Playfair Display]">
+      📍 Contact Us
+    </h2>
+
+    <!-- Contact Info -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12 text-left">
+
+      <!-- Email -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Email</h3>
+        <a href="mailto:rajalodge1980@gmail.com" class="text-gray-200 hover:text-white">rajalodge1980@gmail.com</a>
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Phone</h3>
+        <a href="tel:+919843830181" class="text-gray-200 hover:text-white">98438 30181</a><br>
+        <a href="tel:+919843676822" class="text-gray-200 hover:text-white">98436 76822</a>
+      </div>
+
+      <!-- Instagram -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Instagram</h3>
+        <a href="https://www.instagram.com/raja_lodge_45?igsh=MTJ1Mm10NWdqcnQzOQ==" target="_blank" class="text-gray-200 hover:text-white">
+          @raja_lodge_45
+        </a>
+      </div>
+
+      <!-- Facebook -->
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Facebook</h3>
+        <a href="https://www.facebook.com/share/1TppYe9zSs/" target="_blank" class="text-gray-200 hover:text-white">
+          Raja Lodge FB Page
+        </a>
+      </div>
+
+      <!-- Address -->
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Address</h3>
+        <p class="text-gray-200">5, Mannuvel Pillai Street. Near Bus Stand, Ooty - 643001</p>
+      </div>
+
+    </div>
+
+    <!-- Google Map -->
+    <div class="mb-6 rounded-xl overflow-hidden shadow-lg border-2 border-blue-500">
+      <iframe src="https://maps.google.com/maps?q=5%2C%20Mannuvel%20Pillai%20Street.%20Near%20Bus%20Stand%2C%20Ooty%20-%20643001&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Open in Maps Button -->
+    <a href="https://maps.app.goo.gl/jL82T4gQq8qkWeq59" target="_blank" 
+       class="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-400 text-black font-bold rounded-full transition">
+      Open in Google Maps 🗺️
+    </a>
+  </div>
+</section>
+
+<!-- Neon Glow Effect for Whole Section -->
+<style>
+  .glow-container {
+    box-shadow: 0 0 30px #00bfff, 0 0 50px #00bfff, 0 0 70px #00bfff inset;
+    border-radius: 20px;
+  }
+</style>
+  <!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-8 relative">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+
+    <!-- Copyright / Info -->
+    <p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 Raja Lodge Ooty. All Rights Reserved.</p>
+
+    <!-- Social Links -->
+    <div class="flex space-x-6 mb-4 md:mb-0">
+      <a href="https://www.instagram.com/raja_lodge_45?igsh=MTJ1Mm10NWdqcnQzOQ==" target="_blank" class="hover:text-blue-400 transition text-2xl">
+        <i class="fab fa-instagram"></i> 📸
+      </a>
+      <a href="https://www.facebook.com/share/1TppYe9zSs/" target="_blank" class="hover:text-blue-400 transition text-2xl">
+        <i class="fab fa-facebook"></i> 👍
+      </a>
+      <a href="https://wa.me/919843830181" target="_blank" class="hover:text-green-400 transition text-2xl">
+        <i class="fab fa-whatsapp"></i> 💬
+      </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="text-blue-400 text-3xl hover:text-blue-300 transition">
+      ⬆️
+    </a>
+
+  </div>
+</footer>
+
+<!-- FontAwesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Optional: Smooth Scroll for Back to Top -->
+<script>
+  const scrollBtn = document.querySelector('a[href="#top"]');
+  scrollBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+  
 
 </body>
   </html>
