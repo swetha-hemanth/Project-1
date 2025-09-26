@@ -308,20 +308,56 @@
     </div>
   </div>
 </section>
-<!-- Reviews Section -->
-<section id="reviews" class="bg-gradient-to-b from-[#A0522D] to-[#6B4226] text-white py-16 px-6">
+<section id="reviews" class="py-16 bg-gradient-to-b from-[#A0522D] to-[#6B4226] text-white px-6">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-8 text-yellow-400 font-[Playfair Display]">
       ⭐ Customer Reviews
     </h2>
-    <div class="border-t-2 border-yellow-600 w-3/4 mx-auto my-8"></div>
+
+    <div class="space-y-6">
+      <!-- Sample Reviews -->
+      <div class="p-4 bg-black/50 rounded-xl shadow-md text-left">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+          <span class="ml-2 font-semibold">Alice</span>
+        </div>
+        <p>Beautiful lodge! Loved the warm hospitality and location. 🌿</p>
+      </div>
+      <div class="p-4 bg-black/50 rounded-xl shadow-md text-left">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-400">⭐⭐⭐⭐</span>
+          <span class="ml-2 font-semibold">Bob</span>
+        </div>
+        <p>Very comfortable rooms, close to main attractions. Will visit again!</p>
+      </div>
+      <div class="p-4 bg-black/50 rounded-xl shadow-md text-left">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+          <span class="ml-2 font-semibold">Carol</span>
+        </div>
+        <p>Amazing experience with authentic heritage vibes. Highly recommended.</p>
+      </div>
+      <div class="p-4 bg-black/50 rounded-xl shadow-md text-left">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-400">⭐⭐⭐⭐</span>
+          <span class="ml-2 font-semibold">David</span>
+        </div>
+        <p>Great value for money. Friendly staff and clean rooms.</p>
+      </div>
+      <div class="p-4 bg-black/50 rounded-xl shadow-md text-left">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+          <span class="ml-2 font-semibold">Ella</span>
+        </div>
+        <p>Perfect location and cozy ambiance. Loved the decor and food!</p>
+      </div>
+    </div>
 
     <!-- Review Form -->
-    <div class="bg-white p-6 rounded-xl mb-12 shadow-lg text-black">
+    <div class="bg-black/50 backdrop-blur-md rounded-2xl p-6 mt-12 text-left shadow-lg">
       <h3 class="text-2xl font-semibold mb-4">Leave Your Review</h3>
 
-      <!-- Star Rating -->
-      <div class="flex justify-center mb-4 space-x-2">
+      <div class="flex mb-4 space-x-2" id="starRating">
         <span class="star text-3xl cursor-pointer" data-value="1">☆</span>
         <span class="star text-3xl cursor-pointer" data-value="2">☆</span>
         <span class="star text-3xl cursor-pointer" data-value="3">☆</span>
@@ -329,38 +365,53 @@
         <span class="star text-3xl cursor-pointer" data-value="5">☆</span>
       </div>
 
-      <textarea id="reviewText" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black" rows="4" placeholder="Write your suggestions here..."></textarea>
-      <button id="submitReview" class="mt-4 px-6 py-3 bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-400 transition">
-        Submit Review
-      </button>
+      <input type="text" id="reviewName" placeholder="Your Name" class="w-full p-2 rounded mb-2 text-black">
+      <textarea id="reviewText" rows="4" placeholder="Write your review..." class="w-full p-2 rounded text-black mb-2"></textarea>
+      <button id="submitReview" class="px-6 py-2 bg-yellow-500 text-black font-bold rounded hover:bg-yellow-400 transition">Submit Review</button>
     </div>
 
-    <!-- Display Reviews -->
-    <div id="reviewsList" class="space-y-6">
-      <!-- 5 Sample Reviews -->
-      <div class="bg-white text-black p-4 rounded-xl shadow-lg">
-        <div>⭐⭐⭐⭐⭐</div>
-        <p>"Amazing stay! The rooms were clean and cozy."</p>
-      </div>
-      <div class="bg-white text-black p-4 rounded-xl shadow-lg">
-        <div>⭐⭐⭐⭐</div>
-        <p>"Friendly staff and great location. Loved it!"</p>
-      </div>
-      <div class="bg-white text-black p-4 rounded-xl shadow-lg">
-        <div>⭐⭐⭐⭐⭐</div>
-        <p>"Heritage lodge with modern comforts. Highly recommend!"</p>
-      </div>
-      <div class="bg-white text-black p-4 rounded-xl shadow-lg">
-        <div>⭐⭐⭐</div>
-        <p>"Good experience, but food could be better."</p>
-      </div>
-      <div class="bg-white text-black p-4 rounded-xl shadow-lg">
-        <div>⭐⭐⭐⭐</div>
-        <p>"Beautiful view from the rooms, very peaceful stay."</p>
-      </div>
+    <div id="reviewsList" class="space-y-4 mt-6">
+      <!-- New reviews will appear here -->
     </div>
   </div>
 </section>
+
+<script>
+  let selectedRating = 0;
+  const stars = document.querySelectorAll('#starRating .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.dataset.value;
+      stars.forEach(s => s.textContent = s.dataset.value <= selectedRating ? '⭐' : '☆');
+    });
+  });
+
+  document.getElementById('submitReview').addEventListener('click', () => {
+    const name = document.getElementById('reviewName').value || 'Anonymous';
+    const text = document.getElementById('reviewText').value;
+    if (!text || selectedRating === 0) {
+      alert('Please provide a rating and review text.');
+      return;
+    }
+
+    const reviewDiv = document.createElement('div');
+    reviewDiv.classList.add('p-4', 'bg-black/50', 'rounded-xl', 'shadow-md', 'text-left');
+    reviewDiv.innerHTML = `
+      <div class="flex items-center mb-2">
+        <span class="text-yellow-400">${'⭐'.repeat(selectedRating)}</span>
+        <span class="ml-2 font-semibold">${name}</span>
+      </div>
+      <p>${text}</p>
+    `;
+    document.getElementById('reviewsList').prepend(reviewDiv);
+
+    // Reset form
+    document.getElementById('reviewText').value = '';
+    document.getElementById('reviewName').value = '';
+    selectedRating = 0;
+    stars.forEach(s => s.textContent = '☆');
+  });
+  </script>
 
 <!-- JavaScript for interactive star rating and adding new reviews -->
 <script>
