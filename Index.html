@@ -18,66 +18,57 @@
 </head>
 <body class="bg-black text-white">
 
+<!-- Home Section with Background Video -->
+<section id="home" class="relative h-screen w-full overflow-hidden">
   <!-- Background Video -->
-  <div class="relative h-screen w-full overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-      <source src="mrs_250_ikon_28c3353cde354bb4aba23a01edb11912.mp4" type="mrs_250_ikon_28c3353cde354bb4aba23a01edb11912.mp4">
-    </video>
-    <div class="absolute inset-0 bg-black/50"></div>
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="mrs_250_ikon_28c3353cde354bb4aba23a01edb11912.mp4" type="video/mp4">
+  </video>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
 
-    <!-- Navbar -->
-    <header class="absolute top-0 w-full z-20">
-      <nav class="flex justify-between items-center px-6 py-4 bg-transparent backdrop-blur-sm">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3">
-          <img src="IMG-20250921-WA0004.jpg" alt="Raja Lodge Logo" class="w-14 h-14 rounded-full bg-white p-1 shadow-lg">
-          <span class="text-xl font-bold tracking-wide">Raja Lodge Ooty</span>
-        </div>
-        <!-- Nav Links -->
-        <ul class="hidden md:flex space-x-8 text-lg font-medium">
-          <li><a href="#home" class="hover:text-yellow-400">🏠 Home</a></li>
-          <li><a href="#about" class="hover:text-yellow-400">ℹ️ About</a></li>
-          <li><a href="#gallery" class="hover:text-yellow-400">🖼️ Gallery</a></li>
-          <li><a href="#pricing" class="hover:text-yellow-400">💰 Pricing</a></li>
-          <li><a href="#reviews" class="hover:text-yellow-400">⭐ Reviews</a></li>
-          <li><a href="#guideline" class="hover:text-yellow-400">📜 Guideline</a></li>
-          <li><a href="#contact" class="hover:text-yellow-400">📞 Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Transparent Navbar -->
+  <header class="fixed top-0 w-full z-30">
+    <nav class="flex justify-center items-center px-6 py-4 bg-transparent">
+      <ul class="flex space-x-8 text-lg font-medium text-white drop-shadow-md">
+        <li><a href="#home" class="hover:text-yellow-400">🏠 Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400">ℹ️ About</a></li>
+        <li><a href="#gallery" class="hover:text-yellow-400">🖼️ Gallery</a></li>
+        <li><a href="#pricing" class="hover:text-yellow-400">💰 Pricing</a></li>
+        <li><a href="#reviews" class="hover:text-yellow-400">⭐ Reviews</a></li>
+        <li><a href="#guideline" class="hover:text-yellow-400">📜 Guideline</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">📞 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero Content -->
-    <div id="home" class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
-        ✨ Experience Heritage in Queen of Hills ✨
-      </h1>
-      <p class="mt-4 text-lg md:text-2xl italic tracking-wide">
-        🌿 Where Warmth Meets Heritage 🌿
-      </p>
-
-      <!-- Buttons -->
-      <div class="mt-8 flex space-x-6">
-        <a href="tel:9843830181" class="px-6 py-3 rounded-full bg-yellow-500 text-black font-bold shadow-lg hover:bg-yellow-400 transition">
-          📞 Call Now
-        </a>
-        <a href="https://wa.me/919843830181" target="_blank" class="px-6 py-3 rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-400 transition">
-          💬 WhatsApp Now
-        </a>
-      </div>
-    </div>
+  <!-- Logo (center below navbar) -->
+  <div class="relative z-20 flex justify-center mt-24">
+    <img src="IMG-20250921-WA0004.jpg" alt="Raja Lodge Logo" class="w-28 h-28 rounded-full bg-white p-2 shadow-lg">
   </div>
 
-  <!-- Dummy Sections for Smooth Scroll -->
-  <section id="about" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">About Section</section>
-  <section id="gallery" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Gallery Section</section>
-  <section id="pricing" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">Pricing Section</section>
-  <section id="reviews" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Reviews Section</section>
-  <section id="guideline" class="h-screen flex justify-center items-center bg-gray-900 text-3xl">Guideline Section</section>
-  <section id="contact" class="h-screen flex justify-center items-center bg-gray-800 text-3xl">Contact Section</section>
-  <!-- About Section -->
-<section id="about" class="min-h-screen flex items-center justify-center bg-gray-900 px-6 py-16">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    
+  <!-- Hero Content -->
+  <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg text-white">
+      ✨ Experience Heritage in Queen of Hills ✨
+    </h1>
+    <p class="mt-4 text-lg md:text-2xl italic tracking-wide text-white">
+      🌿 Where Warmth Meets Heritage 🌿
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-8 flex space-x-6">
+      <a href="tel:9843830181" class="px-6 py-3 rounded-full bg-yellow-500 text-black font-bold shadow-lg hover:bg-yellow-400 transition">
+        📞 Call Now
+      </a>
+      <a href="https://wa.me/919843830181" target="_blank" class="px-6 py-3 rounded-full bg-green-500 text-white font-bold shadow-lg hover:bg-green-400 transition">
+        💬 WhatsApp Now
+      </a>
+    </div>
+  </div>
+</section>
+
+
     <!-- Text Content -->
     <div>
       <h2 class="text-4xl font-bold mb-6 text-yellow-400 font-[Playfair Display]">
@@ -87,7 +78,8 @@
         Welcome to <span class="font-semibold text-white">Raja Lodge Ooty</span>, 
         serving guests with warmth and care since <span class="font-semibold">1987</span>.  
         With over <span class="font-semibold">45 years</span> of heritage,  
-        we are located just <span class="font-semibold">2 minutes from Ooty Railway Station and Bus Stand</span>.  
+        we are located just <span class="font-semibold">2 minutes from Ooty Railway Station and Bus Stand.
+        closer to many tourists spots, market and commercial Street ✨</span>.  
         Nestled close to every major <span class="font-semibold">tourist attraction</span>,  
         Raja Lodge is the perfect choice for travelers seeking comfort and convenience in the 
         <span class="italic">Queen of Hills 🌿</span>.
@@ -107,7 +99,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <!-- Gallery Section -->
-<section id="gallery" class="bg-gray-900 text-white py-16 px-6">
+<section id="gallery" class="bg-maroon-900 text-white py-16 px-6">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-10 text-yellow-400 font-[Playfair Display]">
       🖼️ Our Gallery
@@ -173,7 +165,7 @@
 <section id="pricing" class="bg-gray-900 text-white py-16 px-6">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-12 text-yellow-400 font-[Playfair Display]">
-      💎 Luxury Room Rates
+       Room Rates🏷️
     </h2>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
@@ -231,7 +223,7 @@
     </h2>
 
     <!-- Review Form -->
-    <div class="bg-gray-800 p-6 rounded-xl mb-12 shadow-lg">
+    <div class="bg-brown-800 p-6 rounded-xl mb-12 shadow-lg">
       <h3 class="text-2xl font-semibold mb-4">Leave Your Review</h3>
 
       <!-- Star Rating -->
@@ -256,7 +248,7 @@
   </div>
   </section>
   <!-- Contact Section -->
-<section id="contact" class="relative bg-gradient-to-b from-black via-gray-900 to-blue-950 text-white py-16 px-6 glow-container">
+<section id="contact" class="relative bg-gradient-to-b from-black via-grey-900 to-blue-950 text-white py-16 px-6 glow-container">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-12 text-blue-400 font-[Playfair Display]">
       📍 Contact Us
