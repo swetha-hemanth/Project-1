@@ -329,7 +329,7 @@
         <span class="star text-3xl cursor-pointer" data-value="5">☆</span>
       </div>
 
-      <textarea id="reviewText" class="w-full p-3 rounded-lg text-black" rows="4" placeholder="Write your suggestions here..."></textarea>
+      <textarea id="reviewText" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black" rows="4" placeholder="Write your suggestions here..."></textarea>
       <button id="submitReview" class="mt-4 px-6 py-3 bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-400 transition">
         Submit Review
       </button>
@@ -361,6 +361,51 @@
     </div>
   </div>
 </section>
+
+<!-- JavaScript for interactive star rating and adding new reviews -->
+<script>
+  const stars = document.querySelectorAll('.star');
+  let rating = 0;
+
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      const val = star.getAttribute('data-value');
+      highlightStars(val);
+    });
+    star.addEventListener('mouseout', () => {
+      highlightStars(rating);
+    });
+    star.addEventListener('click', () => {
+      rating = star.getAttribute('data-value');
+      highlightStars(rating);
+    });
+  });
+
+  function highlightStars(val) {
+    stars.forEach(star => {
+      star.textContent = star.getAttribute('data-value') <= val ? '⭐' : '☆';
+    });
+  }
+
+  document.getElementById('submitReview').addEventListener('click', () => {
+    const text = document.getElementById('reviewText').value.trim();
+    if (!text || rating === 0) {
+      alert('Please give a rating and write your review!');
+      return;
+    }
+
+    const reviewDiv = document.createElement('div');
+    reviewDiv.className = 'bg-white text-black p-4 rounded-xl shadow-lg';
+    reviewDiv.innerHTML = `<div>${'⭐'.repeat(rating)}</div><p>"${text}"</p>`;
+    
+    document.getElementById('reviewsList').prepend(reviewDiv);
+
+    // Reset form
+    document.getElementById('reviewText').value = '';
+    rating = 0;
+    highlightStars(0);
+  });
+    </script>
 
 <!-- JavaScript for interactive star rating and adding new reviews -->
 <script>
