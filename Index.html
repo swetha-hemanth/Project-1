@@ -23,7 +23,7 @@
 <!-- Home Section with Background Video -->
 <section id="home" class="relative h-screen w-full overflow-hidden">
   <!-- Background Video -->
-  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-80 object-cover">
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
     <source src="mrs_250_ikon_28c3353cde354bb4aba23a01edb11912.mp4" type="video/mp4">
   </video>
 
@@ -45,9 +45,20 @@
     </nav>
   </header>
 
-  <!-- Content Below Navbar -->
-  <div class="absolute middle-2 w-full flex flex-col items-center text-center z-20 px-20">
-    
+  <!-- Home Section with Centered Content -->
+<section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="mrs_250_ikon_28c3353cde354bb4aba23a01edb11912.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Centered Content -->
+  <div class="relative z-20 flex flex-col items-center text-center px-4">
+
     <!-- Logo -->
     <img src="IMG-20250921-WA0004.jpg" alt="Raja Lodge Logo" class="w-28 h-28 rounded-full bg-white p-1 shadow-lg mb-8">
 
@@ -60,8 +71,11 @@
       <a href="tel:9843830181" class="px-6 py-3 rounded-full bg-yellow-500 text-black font-bold">📞 Call Now</a>
       <a href="https://wa.me/919843830181" class="px-6 py-3 rounded-full bg-green-500 text-white font-bold">💬 WhatsApp Now</a>
     </div>
+
   </div>
-      </section>
+</section>
+    
+    
   
 <<!-- About Section -->
 <section id="about" class="relative flex flex-col items-center justify-center min-h-screen px-4 py-16 bg-gradient-to-b from-[#3B0A0A] to-[#5C1A1A]">
@@ -90,7 +104,7 @@
 
 
 <!-- Gallery Section -->
-<section id="gallery" class="bg-gradient-to-b from-[#5C1A1A] to-[#8B4513] text-white py-16 px-6">
+<section id="gallery" class="bg-gradient-to-b from-[#6A0DAD] to-[#D8BFD8] text-white py-16 px-6"
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-10 text-yellow-400 font-[Playfair Display]">
       🖼️ Our Gallery
